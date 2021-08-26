@@ -1,0 +1,245 @@
+/* todo principle of css selector */
+
+
+/* * universal selector */
+
+* {
+    font-size: calc(60% * 0.8vmin);
+}
+
+
+/* * child unversal selector */
+
+div * {
+    /* background-color: #db171d; */
+    color: cornflowerblue;
+}
+
+
+/* * id selector */
+
+#myDiv {
+    border: 1px solid #17c4b5;
+    padding: 0.5rem;
+}
+
+
+/* * class selector */
+
+.myClass {
+    background-color: #aaa31a;
+    color: #fff;
+}
+
+
+/* * descendant selector */
+
+
+/* ! select all sub child */
+
+div p {
+    background-color: rgb(170, 218, 208);
+    color: #8f69b1;
+}
+
+
+/* ! select oly child */
+
+div>p {
+    background-color: #400080;
+    color: #c4acd8;
+}
+
+
+/* * adjacent sibling selector */
+
+
+/* ! เลือก tag P 1 ตัวที่อยู่หลักจาก DIV */
+
+div+p {
+    color: #ff0000;
+    background-color: #c4acd8;
+}
+
+
+/* * general sibling selector */
+
+
+/* ! เลือกทุก tag H5 ที่อยู่หลักจาก DIV */
+
+div~h5 {
+    color: #000;
+    background-color: #ffffbb;
+}
+
+
+/* * select by attribute */
+
+
+/* ! หาที่กำหนด attribute */
+
+a[title] {
+    background: red;
+}
+
+
+/* ! หาค่าที่ประกอบด้วย */
+
+a[href*="arch"] {
+    background: cyan;
+}
+
+
+/* ! หาค่าที่ตรงกับ */
+
+a[href="https://faed.mju.ac.th"] {
+    background: #ffb0d8;
+}
+
+
+/* ! หาค่าที่ขึ้นต้นด้วย */
+
+a[href^="https"] {
+    font-weight: 700;
+    font-size: 2em;
+}
+
+
+/* ! หาค่าที่ลงท้ายด้วย */
+
+a[href$=".ac.th"] {
+    font-style: italic;
+}
+
+
+/* * data attribute selector */
+
+a[data-filetype="image"] {
+    background: #400080;
+    color: #fff;
+}
+
+
+/* ! กรณีมี attribute หลายข้อความ เช่น data-filetype="image jpg png" */
+
+a[data-filetype~="jpg"] {
+    background: #400080;
+    color: #fff;
+    padding-left: 1em;
+}
+
+
+/* * Pseudo Selector : */
+
+
+/* ! เช่น แก้สี link */
+
+main {
+    margin-top: 2em;
+}
+
+main p {
+    color: #000;
+    background: #fff;
+}
+
+main[data-section="Pseudo Selector"]:before {
+    content: "Pseudo Selector :";
+}
+
+main[data-section="Pseudo Selector"] a:link {
+    color: #009191;
+}
+
+main[data-section="Pseudo Selector"] a:visited {
+    color: #ff00ff
+}
+
+main[data-section="Pseudo Selector"] h3:before {
+    content: "This is before";
+}
+
+main[data-section="Pseudo Selector"] h3 {
+    position: relative;
+    transition: 0.5s;
+}
+
+main[data-section="Pseudo Selector"] h3:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 280px;
+    height: 3px;
+    background: green;
+}
+
+main[data-section="Pseudo Selector"] h3:hover {
+    color: red;
+}
+
+main[data-section="Pseudo Selector"] p:not(.not) {
+    background: red;
+}
+
+
+/* * pheduo element */
+
+main[data-section="Pseudo Element"] p::first-line {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+main[data-section="Pseudo Element"] p::first-letter {
+    font-size: 2em;
+    font-weight: bold;
+    color: red;
+}
+
+
+/* * Nth child and Type Selectors */
+
+main[data-section="Nth"]:before {
+    content: "Nth child and Type Selectors";
+}
+
+main[data-section="Nth"] li:nth-child(3) {
+    color: red;
+}
+
+main[data-section="Nth"] li:nth-last-child(2) {
+    color: red;
+}
+
+main[data-section="Nth"] ul {
+    transition: 0.5s;
+}
+
+main[data-section="Nth"] ul:nth-of-type(1):hover {
+    background: pink;
+}
+
+main[data-section="Nth"] ul:nth-of-type(2) {
+    border: 1px solid red;
+}
+
+main[data-section="Nth"] ul:nth-last-of-type(1) {
+    border: 1px solid blue;
+}
+
+main[data-section="Nth"] .first-last_child p:first-child {
+    background: red;
+}
+
+main[data-section="Nth"] .first-last_child p:last-child {
+    background: green;
+}
+
+main[data-section="Nth"] .only_child p:only-child {
+    color: #17c4b5;
+}
+
+main[data-section="firs_of_type"] ul:first-of-type li:nth-child(2) {
+    font-weight: bold;
+    color: #8000ff;
+}
