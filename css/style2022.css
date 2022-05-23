@@ -35,7 +35,8 @@ div * {
 /* * descendant selector */
 
 
-/* ! select all sub child */
+/* ! select all sub childs */
+/* เลือก p ทั้งหมดที่อยู๋ใน div รวมถึงที่อยู่ใน tag อื่นๆ ใน div ด้วย */
 
 div p {
     background-color: rgb(170, 218, 208);
@@ -43,7 +44,8 @@ div p {
 }
 
 
-/* ! select oly child */
+/* ! select only child */
+/* เลือกเฉพาะ p ที่อยู่ใน div เท่านั้น */
 
 div>p {
     background-color: #400080;
@@ -54,7 +56,7 @@ div>p {
 /* * adjacent sibling selector */
 
 
-/* ! เลือก tag P 1 ตัวที่อยู่หลักจาก DIV */
+/* ! เลือก tag P 1 ตัวที่อยู่หลักจากปิด /DIV */
 
 div+p {
     color: #ff0000;
@@ -65,7 +67,7 @@ div+p {
 /* * general sibling selector */
 
 
-/* ! เลือกทุก tag H5 ที่อยู่หลักจาก DIV */
+/* ! เลือกทุก tag H5 ที่อยู่หลักจากปิด /DIV */
 
 div~h5 {
     color: #000;
